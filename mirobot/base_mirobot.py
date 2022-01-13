@@ -221,7 +221,7 @@ class BaseMirobot(AbstractContextManager):
                                       disable_debug=disable_debug,
                                       terminator=os.linesep,
                                       wait=(wait or (wait is None and self.wait)),
-                                      wait_idle=wait_idle)
+                                      wait_idle=((wait or (wait is None and self.wait)) and wait_idle))
 
             return output
 
